@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <style>
+    #menuRadio {display: none;}
+    #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+    #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 200px; }
+    #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+  <script>
+    $( function() {
+        $( "#sortable" ).sortable();
+    } );
+  </script>
+</head>
+<body>
+    <h1>Il·lustradors de velers d'època</h1>
+    <div id="ButtonsMenu">
+        <button id="seeRadioButton">See RadioButton</button>
+    </div>
+    <div id="menuRadio">
+        <legend>Select an effect: </legend>
+        <select name="effects" id="effectTypes">
+            <option value="blind">Blind</option>
+            <option value="bounce">Bounce</option>
+            <option value="clip">Clip</option>
+            <option value="drop">Drop</option>
+            <option value="explode">Explode</option>
+            <option value="fade">Fade</option>
+            <option value="fold">Fold</option>
+            <option value="highlight">Highlight</option>
+            <option value="puff">Puff</option>
+            <option value="pulsate">Pulsate</option>
+            <option value="scale">Scale</option>
+            <option value="shake">Shake</option>
+            <option value="size">Size</option>
+            <option value="slide">Slide</option>
+          </select>
+    </div>
+    <div>
+        <div>
+            <ul id="sortable">
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><img src="img/1.JPG" alt="img1" height="200px"></li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><img src="img/2.JPG" alt="img1" height="200px"></li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><img src="img/3.JPG" alt="img1" height="200px"></li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><img src="img/4.JPG" alt="img1" height="200px"></li>
+                <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><img src="img/5.JPG" alt="img1" height="200px"></li>
+            </ul>
+        </div>
+        <div id="paperShip" style="position:absolute">
+            <img src="https://media.istockphoto.com/photos/paper-boat-picture-id173571979?k=20&m=173571979&s=612x612&w=0&h=vl6ErGKG_d-OW4cRniRFPkt3fhf0KpTLKqUKMoj5bVo=" alt="paperShipt", height="100">
+        </div>
+    </div>
+
+ 
+<script type="text/javascript" src="javascript.js"></script>
+</body>
+</html>
