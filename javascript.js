@@ -1,5 +1,6 @@
 $.status_img = true;
 
+document.body.style.backgroundImage = "url('https://earthsky.org/upl/2018/06/ocean-apr27-2020-Cidy-Chai-North-Pacific-scaled-e1591491800783.jpeg')";
 
 var width = $(document).width() - $('#paperShip').width();
 $(document).ready(function() {
@@ -27,24 +28,37 @@ var get = document.getElementById("paperShip");
 console.log(get)
 
 $("#button").click(function(){
-    if($.status_img){
-        $("#overview").hide("slow");
-        $.status_img = false;
-    }
-    else{
-        if($("#radio1").is(":checked")){
-            $("#overview").show("slow");
-            
-        }
-        else if($("#radio2").is(":checked")){
-            $("#overview").grayscale("slow");
-        }
-        $.status_img = true;
-    }
-    
+    runEffect();
 });
 
 $("#seeRadioButton").on( "click", function() {
     console.log("click");
     $("#menuRadio").slideToggle(300);
 });
+
+function runEffect() {
+
+    // get effect type from
+    var selectedEffect = $( "#effectTypes" ).val();
+    console.log(selectedEffect);
+    // Most effect types need no options passed by default
+    var options = {};
+    // some effects have required parameters
+    if ( selectedEffect === "scale" ) {
+      options = { percent: 50 };
+    } else if ( selectedEffect === "size" ) {
+      options = { to: { width: 200, height: 60 } };
+    }
+
+    // Run the effect
+    if($.status_img){
+        $( "#sortable" ).hide( selectedEffect, options, 1000 );
+        $.status_img = false;
+    }
+    else{
+        $( "#sortable" ).show(selectedEffect, options, 1000 );
+        $.status_img = true;
+    }
+
+
+  };
